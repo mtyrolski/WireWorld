@@ -19,7 +19,7 @@ class Cell sealed : public DrawbleObject
 
 	short m_state;
 
-	void changeTexture();
+	void updateTexture();
 
 public:
 	Cell(sf::Vector2i id, sf::RenderWindow *window);
