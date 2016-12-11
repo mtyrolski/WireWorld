@@ -1,23 +1,18 @@
 #include <SFML/Graphics.hpp>
+#include "Window.h"
+#include "EventControl.h"
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
-	sf::CircleShape shape(100.f);
-	shape.setFillColor(sf::Color::Green);
+	Window window(sf::Vector2f(25,25),"test");
+	EventControl cEvent(&window);
 
-	while (window.isOpen())
+	while (window.IsOpen())
 	{
 		sf::Event event;
-		while (window.pollEvent(event))
-		{
-			if (event.type == sf::Event::Closed)
-				window.close();
-		}
 
-		window.clear();
-		window.draw(shape);
-		window.display();
+		window.Refresh();
+		cEvent.checkEvent(&event);
 	}
 
 	return 0;
