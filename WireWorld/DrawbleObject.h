@@ -2,7 +2,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class DrawbleObject sealed
+class DrawbleObject
 {
 protected:
 	sf::Sprite m_sprite;
