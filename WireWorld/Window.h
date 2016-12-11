@@ -18,6 +18,7 @@ class Window sealed
 
 public:
 	Window(sf::Vector2f dimensions,std::string title);
+	~Window();
 	void Refresh();
 	bool IsOpen();
 	sf::RenderWindow *GetPointerToWindow();

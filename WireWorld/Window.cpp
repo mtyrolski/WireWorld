@@ -15,6 +15,11 @@ Window::Window(sf::Vector2f dimensions, std::string title)
 	m_window = new sf::RenderWindow(sf::VideoMode(dimensions.x, dimensions.y), title);
 }
 
+Window::~Window()
+{
+	delete m_window;
+}
+
 void Window::Refresh()
 {
 	clear();
