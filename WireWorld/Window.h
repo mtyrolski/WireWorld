@@ -2,6 +2,7 @@
 #define Window_h
 
 #include <SFML/Graphics.hpp>
+#include "Cell.h"
 
 class Window sealed
 {
@@ -16,7 +17,7 @@ class Window sealed
 	void clear();
 
 public:
-	Window(sf::Vector2f dimentions,std::string title);
+	Window(sf::Vector2f dimensions,std::string title);
 	void Refresh();
 	bool IsOpen();
 	sf::RenderWindow *GetPointerToWindow();

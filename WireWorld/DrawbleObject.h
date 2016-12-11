@@ -5,11 +5,12 @@
 class DrawbleObject
 {
 protected:
-	sf::Sprite m_sprite;
+	sf::RectangleShape m_shape;
+
 	sf::RenderWindow *m_window;
 
 	void setCenter();
 public:
-	DrawbleObject(sf::RenderWindow *window,sf::Vector2f pos);
+	DrawbleObject(sf::RenderWindow *window);
 	void Draw();
 };

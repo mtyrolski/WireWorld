@@ -1,8 +1,33 @@
 #pragma once
 
 #include <SFML/Graphics.hpp>
+#include "DrawbleObject.h"
 
-class Cell sealed
+class Cell sealed : public DrawbleObject
 {
+	const sf::Vector2i m_id;
 
+	static sf::Vector2f m_dimensions;
+
+	static enum
+	{
+		EMPTY = 0,
+		HEAD = 1,
+		TAIL = 2,
+		GUIDE = 3
+	};
+
+	short m_state;
+
+	void changeTexture();
+
+public:
+	Cell(sf::Vector2i id, sf::RenderWindow *window);
+
+	void SetState(short value);
+	short GetState();
+
+	static void Init(sf::Vector2f dimensions);
+
+	static std::vector<Cell> cells;
 };

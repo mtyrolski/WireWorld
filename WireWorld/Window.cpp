@@ -10,9 +10,9 @@ void Window::clear()
 	m_window->clear(sf::Color(255, 255, 255));
 }
 
-Window::Window(sf::Vector2f dimentions, std::string title)
+Window::Window(sf::Vector2f dimensions, std::string title)
 {
-	m_window = new sf::RenderWindow(sf::VideoMode(dimentions.x, dimentions.y), title);
+	m_window = new sf::RenderWindow(sf::VideoMode(dimensions.x, dimensions.y), title);
 }
 
 void Window::Refresh()
