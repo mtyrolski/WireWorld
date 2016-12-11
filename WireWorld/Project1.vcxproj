@@ -131,12 +131,18 @@
   <ItemGroup>
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="DrawbleObject.cpp" />
+    <ClCompile Include="EventControl.cpp" />
+    <ClCompile Include="Loader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="ViewControl.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cell.h" />
     <ClInclude Include="DrawbleObject.h" />
+    <ClInclude Include="EventControl.h" />
+    <ClInclude Include="Loader.h" />
+    <ClInclude Include="ViewControl.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -11,5 +11,7 @@ void Loader::LoadData()
 		file >> Loader::title;
 		file >> Loader::dimensions.x;
 		file >> Loader::dimensions.y;
+		file >> Loader::ammount.x;
+		file >> Loader::ammount.y;
 	}
 }

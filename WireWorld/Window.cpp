@@ -41,3 +41,8 @@ void Window::Close()
 {
 	m_window->close();
 }
+
+void Window::ViewUpdate(sf::View *view)
+{
+	m_window->setView(*view);
+}

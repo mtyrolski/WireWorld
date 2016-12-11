@@ -13,6 +13,7 @@ public:
 
 	static std::string title;
 	static sf::Vector2f dimensions;
+	static sf::Vector2i ammount;
 
 	static void LoadData();
 };

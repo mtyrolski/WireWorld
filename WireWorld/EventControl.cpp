@@ -10,10 +10,29 @@ void EventControl::checkEvent(sf::Event *event)
 {
 	while ((m_window->GetPointerToWindow())->pollEvent(*event))
 	{
-		if (event->type == sf::Event::Closed ||
-			event->type == sf::Event::KeyPressed && event->key.code == sf::Keyboard::Escape)
+		switch (event->type)
 		{
-			m_window->Close();
+			case sf::Event::Closed:
+			{
+				if (event->type == sf::Event::KeyPressed && event->key.code == sf::Keyboard::Escape)
+				{
+					m_window->Close();
+				}
+				break;
+			}
+			
+			case sf::Event::MouseWheelMoved:
+			{
+				if (event->mouseWheel.delta > 0)
+				{
+					ViewControl::Zoom(ViewControl::ZOOM);
+				}
+				else
+				{
+					ViewControl::Zoom(ViewControl::REDUCTION);
+				}
+				break;
+			}
 		}
 	}
 }

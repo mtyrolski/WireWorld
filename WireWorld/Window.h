@@ -3,15 +3,13 @@
 
 #include <SFML/Graphics.hpp>
 #include "Cell.h"
+#include "ViewControl.h"
 
 class Window sealed
 {
 	sf::RenderWindow *m_window;
 
 	std::vector<Cell> *m_cells;
-
-	sf::View m_view;
-
 
 	void display();
 	void clear();
@@ -23,6 +21,7 @@ public:
 	bool IsOpen();
 	sf::RenderWindow *GetPointerToWindow();
 	void Close();
+	void ViewUpdate(sf::View *view);
 };
 
 #endif // !Window_h
