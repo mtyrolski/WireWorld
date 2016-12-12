@@ -10,7 +10,6 @@ int main()
 
 	Window window(Loader::dimensions,Loader::title);
 	EventControl cEvent(&window);
-	ViewControl::Init();
 
 	while (window.IsOpen())
 	{

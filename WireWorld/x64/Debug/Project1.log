@@ -1,2 +1,6 @@
-﻿  Project1.vcxproj -> C:\Users\KrzysztofJarzyna\Desktop\Project1\x64\Debug\Project1.exe
-  Project1.vcxproj -> C:\Users\KrzysztofJarzyna\Desktop\Project1\x64\Debug\Project1.pdb (Partial PDB)
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  Cell.cpp
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.h(18): warning C4091: 'static ': ignored on left of '' when no variable is declared
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.cpp(65): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+  Project1.vcxproj -> D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\x64\Debug\WireWorld.exe
+  Project1.vcxproj -> D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\x64\Debug\WireWorld.pdb (Partial PDB)

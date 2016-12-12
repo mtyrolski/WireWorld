@@ -2,6 +2,10 @@
 
 const std::string Loader::path = "source/data/options.txt";
 
+ std::string Loader::title;
+ sf::Vector2f Loader::dimensions;
+ sf::Vector2i Loader::ammount;
+
 void Loader::LoadData()
 {
 	std::fstream file(path,std::ios::in);

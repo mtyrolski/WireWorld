@@ -1,5 +1,8 @@
 #include "Cell.h"
 
+sf::Vector2f Cell::m_dimensions;
+std::vector<Cell> Cell::cells;
+
 void Cell::updateTexture()
 {
 	switch (m_state)
@@ -36,6 +39,7 @@ Cell::Cell(sf::Vector2i id,sf::RenderWindow *window) : DrawbleObject(window), m_
 
 	updateTexture();
 
+	m_shape.move(id.x*m_dimensions.x,id.y*m_dimensions.y);
 }
 
 
@@ -51,7 +55,14 @@ short Cell::GetState()
 	return m_state;
 }
 
-void Cell::Init(sf::Vector2f dimensions)
+void Cell::Init(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window)
 {
 	Cell::m_dimensions = dimensions;
+	for (size_t j = 0; j < ammount.y; j++)
+	{
+		for (size_t i = 0; i < ammount.x; i++)
+		{
+			Cell::cells.emplace_back(sf::Vector2i(i,j),window);
+		}
+	}
 }

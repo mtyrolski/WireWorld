@@ -27,7 +27,7 @@ public:
 	void SetState(short value);
 	short GetState();
 
-	static void Init(sf::Vector2f dimensions);
+	static void Init(sf::Vector2f dimensions,sf::Vector2i ammount, sf::RenderWindow *window);
 
 	static std::vector<Cell> cells;
 };

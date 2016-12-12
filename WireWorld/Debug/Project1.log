@@ -1,2 +1,18 @@
-﻿  main.cpp
-Debug\main.obj : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.h(18): warning C4091: 'static ': ignored on left of '' when no variable is declared
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\viewcontrol.h(26): warning C4091: 'static ': ignored on left of '' when no variable is declared
+  Window.cpp
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.h(18): warning C4091: 'static ': ignored on left of '' when no variable is declared
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\window.cpp(15): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+  EventControl.cpp
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.h(18): warning C4091: 'static ': ignored on left of '' when no variable is declared
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\viewcontrol.h(26): warning C4091: 'static ': ignored on left of '' when no variable is declared
+  Generating Code...
+  Compiling...
+  ViewControl.cpp
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.h(18): warning C4091: 'static ': ignored on left of '' when no variable is declared
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\viewcontrol.h(26): warning C4091: 'static ': ignored on left of '' when no variable is declared
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\viewcontrol.cpp(62): warning C4551: function call missing argument list
+  Generating Code...
+Debug\Cell.obj : fatal error LNK1112: module machine type 'X86' conflicts with target machine type 'x64'

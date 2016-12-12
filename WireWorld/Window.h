@@ -3,7 +3,6 @@
 
 #include <SFML/Graphics.hpp>
 #include "Cell.h"
-#include "ViewControl.h"
 
 class Window sealed
 {

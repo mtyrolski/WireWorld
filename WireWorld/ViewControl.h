@@ -5,7 +5,7 @@
 
 class ViewControl sealed
 {
-	static Window* m_window;
+	static Window *m_window;
 	
 	static sf::View m_view;
 
