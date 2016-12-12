@@ -1,5 +1,11 @@
 #include "ViewControl.h"
 
+const float ViewControl::moveValue = 2;
+const float ViewControl::zoomValue = 2;
+sf::View ViewControl::m_view;
+Window *ViewControl::m_window;
+
+
 void ViewControl::Init(Window* window, sf::Vector2f windowDimensions)
 {
 	ViewControl::m_view.setSize(windowDimensions);
@@ -12,13 +18,13 @@ void ViewControl::Zoom(short value)
 	{
 	case ZOOM:
 	{
-		m_view.zoom(zoomValue);
+		m_view.zoom(ViewControl::zoomValue);
 		break;
 	}
 
 	case REDUCTION:
 	{
-		m_view.zoom(-zoomValue);
+		m_view.zoom(-ViewControl::zoomValue);
 		break;
 	}
 
@@ -31,25 +37,25 @@ void ViewControl::Move(short value)
 	{
 		case TOP:
 		{
-			m_view.move(sf::Vector2f(0, -moveValue));
+			m_view.move(sf::Vector2f(0, -ViewControl::moveValue));
 			break;
 		}
 
 		case RIGHT:
 		{
-			m_view.move(sf::Vector2f(moveValue, 0));
+			m_view.move(sf::Vector2f(ViewControl::moveValue, 0));
 			break;
 		}
 
 		case DOWN:
 		{
-			m_view.move(sf::Vector2f(0, moveValue));
+			m_view.move(sf::Vector2f(0, ViewControl::moveValue));
 			break;
 		}
 
 		case LEFT:
 		{
-			m_view.move(sf::Vector2f(-moveValue, 0));
+			m_view.move(sf::Vector2f(-ViewControl::moveValue, 0));
 			break;
 		}
 	}
@@ -59,24 +65,26 @@ void ViewControl::Move(short value)
 
 void ViewControl::CheckKeyboard() //wyciagnac przed nawias viewUpdate(&m_view)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+	if (sf::Keyboard::isKeyPressed)
 	{
-		ViewControl::Move(ViewControl::TOP);
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
+		{
+			ViewControl::Move(ViewControl::TOP);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			ViewControl::Move(ViewControl::RIGHT);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		{
+			ViewControl::Move(ViewControl::DOWN);
+		}
+		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			ViewControl::Move(ViewControl::LEFT);
+		}
+
 		m_window->ViewUpdate(&m_view);
 	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
-	{
-		ViewControl::Move(ViewControl::RIGHT);
-		m_window->ViewUpdate(&m_view);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
-	{
-		ViewControl::Move(ViewControl::DOWN);
-		m_window->ViewUpdate(&m_view);
-	}
-	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
-	{
-		ViewControl::Move(ViewControl::LEFT);
-		m_window->ViewUpdate(&m_view);
-	}
+	
 }
