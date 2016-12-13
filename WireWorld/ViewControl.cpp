@@ -1,7 +1,9 @@
 #include "ViewControl.h"
 
 const float ViewControl::moveValue = 2;
-const float ViewControl::zoomValue = 0.5f;
+const float ViewControl::zoomValue = 0.9f;
+const float ViewControl::reductionValue = 1.1f;
+
 sf::View ViewControl::m_view;
 Window *ViewControl::m_window;
 
@@ -25,7 +27,7 @@ void ViewControl::Zoom(short value)
 
 	case REDUCTION:
 	{
-		m_view.zoom(-ViewControl::zoomValue);
+		m_view.zoom(ViewControl::reductionValue);
 		break;
 	}
 
@@ -42,15 +44,15 @@ void ViewControl::Move(short value)
 			break;
 		}
 
-		case RIGHT:
-		{
-			m_view.move(sf::Vector2f(ViewControl::moveValue, 0));
-			break;
-		}
-
 		case DOWN:
 		{
 			m_view.move(sf::Vector2f(0, ViewControl::moveValue));
+			break;
+		}
+
+		case RIGHT:
+		{
+			m_view.move(sf::Vector2f(ViewControl::moveValue, 0));
 			break;
 		}
 
@@ -72,15 +74,15 @@ void ViewControl::CheckKeyboard() //wyciagnac przed nawias viewUpdate(&m_view)
 		{
 			ViewControl::Move(ViewControl::TOP);
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			ViewControl::Move(ViewControl::RIGHT);
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
 		{
 			ViewControl::Move(ViewControl::DOWN);
 		}
-		else if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
 		{
 			ViewControl::Move(ViewControl::LEFT);
 		}
