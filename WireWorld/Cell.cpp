@@ -39,7 +39,7 @@ Cell::Cell(sf::Vector2i id,sf::RenderWindow *window) : DrawbleObject(window), m_
 
 	updateTexture();
 
-	m_shape.move(id.x*m_dimensions.x,id.y*m_dimensions.y);
+	m_shape.setPosition(id.x*m_dimensions.x,id.y*m_dimensions.y);
 }
 
 
@@ -58,6 +58,7 @@ short Cell::GetState()
 void Cell::Init(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window)
 {
 	Cell::m_dimensions = dimensions;
+
 	for (size_t j = 0; j < ammount.y; j++)
 	{
 		for (size_t i = 0; i < ammount.x; i++)

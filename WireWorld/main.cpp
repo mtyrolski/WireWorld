@@ -8,7 +8,7 @@ int main()
 {
 	Loader::LoadData();
 
-	Window window(Loader::dimensions,Loader::title);
+	Window window(sf::Vector2f(Loader::dimensions.x*Loader::ammount.x, Loader::dimensions.y*Loader::ammount.y),Loader::title);
 	EventControl cEvent(&window);
 	ViewControl::Init(&window,sf::Vector2f(Loader::dimensions.x*Loader::ammount.x, Loader::dimensions.y*Loader::ammount.y));
 	Cell::Init(Loader::dimensions,Loader::ammount, window.GetPointerToWindow());

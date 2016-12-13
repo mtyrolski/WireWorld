@@ -13,6 +13,7 @@ void Window::clear()
 Window::Window(sf::Vector2f dimensions, std::string title)
 {
 	m_window = new sf::RenderWindow(sf::VideoMode(dimensions.x, dimensions.y), title);
+	m_window->setFramerateLimit(128);
 }
 
 Window::~Window()
@@ -23,7 +24,7 @@ Window::~Window()
 void Window::Refresh()
 {
 	clear();
-	for (auto& var : *m_cells) var.Draw();
+	for (auto &var : Cell::cells) var.Draw();
 	display();
 }
 

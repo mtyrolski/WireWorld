@@ -8,7 +8,6 @@ class Window sealed
 {
 	sf::RenderWindow *m_window;
 
-	std::vector<Cell> *m_cells;
 
 	void display();
 	void clear();
