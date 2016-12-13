@@ -7,7 +7,7 @@ void Window::display()
 
 void Window::clear()
 {
-	m_window->clear(sf::Color(255, 255, 255));
+	m_window->clear(sf::Color::Black);
 }
 
 Window::Window(sf::Vector2f dimensions, std::string title)

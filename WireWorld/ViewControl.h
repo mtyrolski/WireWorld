@@ -11,7 +11,8 @@ class ViewControl sealed
 
 	static const float moveValue;
 	static const float zoomValue;
-	
+	static const float reductionValue;
+
 public:
 
 	static enum
