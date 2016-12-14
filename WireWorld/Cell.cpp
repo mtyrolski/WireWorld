@@ -30,6 +30,21 @@ void Cell::updateTexture()
 	}
 }
 
+
+
+void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window)
+{
+	m_dimensions=dimensions;
+
+	for (size_t j = 0; j < ammount.y; j++)
+	{
+		for (size_t i = 0; i < ammount.x; i++)
+		{
+			cells.emplace_back(sf::Vector2i(i, j), window);
+		}
+	}
+}
+
 Cell::Cell(sf::Vector2i id,sf::RenderWindow *window) : DrawbleObject(window), m_id(id) , m_state(EMPTY)
 {
 	m_shape.setSize(m_dimensions);
@@ -50,6 +65,11 @@ void Cell::SetState(short value)
 	updateTexture();
 }
 
+void Cell::ChangeState()
+{
+	SetState((m_state+1 > Cell::GUIDE ? Cell::EMPTY : m_state+1));
+}
+
 short Cell::GetState()
 {
 	return m_state;
@@ -57,13 +77,5 @@ short Cell::GetState()
 
 void Cell::Init(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window)
 {
-	Cell::m_dimensions = dimensions;
-
-	for (size_t j = 0; j < ammount.y; j++)
-	{
-		for (size_t i = 0; i < ammount.x; i++)
-		{
-			Cell::cells.emplace_back(sf::Vector2i(i,j),window);
-		}
-	}
+	fillVector(dimensions,ammount,window);
 }

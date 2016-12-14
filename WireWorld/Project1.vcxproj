@@ -134,6 +134,7 @@
     <ClCompile Include="EventControl.cpp" />
     <ClCompile Include="Loader.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MouseControl.cpp" />
     <ClCompile Include="ViewControl.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
@@ -142,6 +143,7 @@
     <ClInclude Include="DrawbleObject.h" />
     <ClInclude Include="EventControl.h" />
     <ClInclude Include="Loader.h" />
+    <ClInclude Include="MouseControl.h" />
     <ClInclude Include="ViewControl.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>

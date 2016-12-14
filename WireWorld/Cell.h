@@ -21,13 +21,16 @@ class Cell sealed : public DrawbleObject
 
 	void updateTexture();
 
+	static void fillVector(sf::Vector2f dimensions,sf::Vector2i ammount, sf::RenderWindow *window);
+
 public:
 	Cell(sf::Vector2i id, sf::RenderWindow *window);
 
 	void SetState(short value);
 	short GetState();
+	void ChangeState();
 
-	static void Init(sf::Vector2f dimensions,sf::Vector2i ammount, sf::RenderWindow *window);
+	static void Init(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window);
 
 	static std::vector<Cell> cells;
 };
