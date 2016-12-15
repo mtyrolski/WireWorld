@@ -1,10 +1,10 @@
 ﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (Project1.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   MouseControl.cpp
 d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.h(18): warning C4091: 'static ': ignored on left of '' when no variable is declared
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(17): warning C4244: 'initializing': conversion from 'float' to 'std::size_t', possible loss of data
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(18): warning C4244: 'initializing': conversion from 'float' to 'std::size_t', possible loss of data
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(20): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(22): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(29): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(15): warning C4244: 'initializing': conversion from 'float' to 'std::size_t', possible loss of data
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(16): warning C4244: 'initializing': conversion from 'float' to 'std::size_t', possible loss of data
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(18): warning C4244: 'argument': conversion from 'float' to 'unsigned __int64', possible loss of data
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(20): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
+d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\mousecontrol.cpp(27): warning C4244: '=': conversion from 'clock_t' to 'float', possible loss of data
   Project1.vcxproj -> D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\x64\Debug\WireWorld.exe
   Project1.vcxproj -> D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\x64\Debug\WireWorld.pdb (Partial PDB)

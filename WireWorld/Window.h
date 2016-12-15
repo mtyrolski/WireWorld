@@ -8,7 +8,6 @@ class Window sealed
 {
 	sf::RenderWindow *m_window;
 
-
 	void display();
 	void clear();
 

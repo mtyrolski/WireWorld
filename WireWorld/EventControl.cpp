@@ -14,10 +14,7 @@ void EventControl::checkEvent(sf::Event *event)
 		{
 			case sf::Event::Closed:
 			{
-				if (event->type == sf::Event::KeyPressed && event->key.code == sf::Keyboard::Escape)
-				{
-					m_window->Close();
-				}
+				m_window->Close();
 				break;
 			}
 			
@@ -30,6 +27,15 @@ void EventControl::checkEvent(sf::Event *event)
 				else
 				{
 					ViewControl::Zoom(ViewControl::REDUCTION);
+				}
+				break;
+			}
+
+			case sf::Event::KeyPressed:
+			{
+				if (event->key.code == sf::Keyboard::Escape)
+				{
+					m_window->Close();
 				}
 				break;
 			}
