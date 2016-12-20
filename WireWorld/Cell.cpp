@@ -20,7 +20,7 @@ void Cell::updateTexture()
 	}
 	case TAIL: 
 	{
-		m_shape.setFillColor(sf::Color::Blue);
+		m_shape.setFillColor(sf::Color::Cyan);
 		break;
 	}
 	case GUIDE: 
@@ -48,7 +48,7 @@ void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderW
 
 size_t Cell::computeNeighborHeads()
 {
-	return 
+	return
 			//j-1
 			((Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			(Cell::cells[m_id.x + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
@@ -60,7 +60,6 @@ size_t Cell::computeNeighborHeads()
 			(Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			(Cell::cells[m_id.x + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
-
 }
 
 void Cell::ConfirmUpdate()

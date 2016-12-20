@@ -1,7 +1,7 @@
 #include "GameControl.h"
 
 bool GameControl::m_run = false;
-float GameControl::frequency = 0.5f;
+float GameControl::frequency = 0.005f;
 float GameControl::time_0_cycle;
 
 
@@ -10,10 +10,11 @@ void GameControl::Control()
 	if ((clock() - time_0_cycle) / CLOCKS_PER_SEC > frequency)
 	{
 		for (auto &var : Cell::cells)
-		{
 			var.PrepareUpdate();
+
+		for (auto &var : Cell::cells)
 			var.ConfirmUpdate();
-		}
+
 		time_0_cycle = clock();
 	}
 	
