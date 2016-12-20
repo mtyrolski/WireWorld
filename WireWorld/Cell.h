@@ -21,6 +21,8 @@ class Cell sealed : public DrawbleObject
 
 	int nextValue;
 
+	bool exist(size_t number);
+
 	
 public:
 	Cell(sf::Vector2i id, sf::RenderWindow *window);

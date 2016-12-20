@@ -32,7 +32,6 @@ void Cell::updateTexture()
 }
 
 
-
 void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window)
 {
 	Cell::m_ammount = ammount;
@@ -50,16 +49,22 @@ size_t Cell::computeNeighborHeads()
 {
 	return
 			//j-1
-			((Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(( exist(m_id.x - 1 + m_ammount.x*(m_id.y - 1)) && Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(exist(m_id.x + m_ammount.x*(m_id.y - 1)) && Cell::cells[m_id.x + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(exist(m_id.x + 1 + m_ammount.x*(m_id.y - 1)) && Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			//j	
-			(Cell::cells[m_id.x - 1 + m_ammount.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + 1 + m_ammount.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
+			(exist(m_id.x - 1 + m_ammount.x*m_id.y) && Cell::cells[m_id.x - 1 + m_ammount.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
+			(exist(m_id.x + 1 + m_ammount.x*m_id.y) && Cell::cells[m_id.x + 1 + m_ammount.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
 			//j+1
-			(Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
+			(exist(m_id.x - 1 + m_ammount.x*(m_id.y + 1)) && Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(exist(m_id.x + m_ammount.x*(m_id.y + 1)) && Cell::cells[m_id.x + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(exist(m_id.x + 1 + m_ammount.x*(m_id.y + 1)) && Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
+}
+
+
+bool Cell::exist(size_t number)
+{
+	return (number >= 0 && number < m_ammount.x*m_ammount.y);
 }
 
 void Cell::ConfirmUpdate()
