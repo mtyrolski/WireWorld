@@ -1,6 +1,6 @@
 #include "Loader.h"
 
-const std::string Loader::path = "source/data/options.txt";
+const std::string Loader::path = "source/Loader/data/options.txt";
 
  std::string Loader::title;
  sf::Vector2f Loader::dimensions;
