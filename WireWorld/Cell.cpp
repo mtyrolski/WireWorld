@@ -1,5 +1,6 @@
 #include "Cell.h"
 
+sf::Vector2i Cell::m_ammount;
 sf::Vector2f Cell::m_dimensions;
 std::vector<Cell> Cell::cells;
 
@@ -34,8 +35,8 @@ void Cell::updateTexture()
 
 void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window)
 {
-	m_dimensions=dimensions;
-
+	Cell::m_ammount = ammount;
+	Cell::m_dimensions  = dimensions;
 	for (size_t j = 0; j < ammount.y; j++)
 	{
 		for (size_t i = 0; i < ammount.x; i++)
@@ -47,18 +48,22 @@ void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderW
 
 size_t Cell::computeNeighborHeads()
 {
-	return	//j-1
-			((Cell::cells[m_id.x - 1 + m_dimensions.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + m_dimensions.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + 1 + m_dimensions.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+	int ammount =
+		//j-1
+			((Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			//j	
-			(Cell::cells[m_id.x-1 + m_dimensions.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x+1 + m_dimensions.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x - 1 + m_ammount.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + 1 + m_ammount.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
 			//j+1
-			(Cell::cells[m_id.x - 1 + m_dimensions.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + m_dimensions.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
-			(Cell::cells[m_id.x + 1 + m_dimensions.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
+			(Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
+
+	return ammount;
 }
+
 
 Cell::Cell(sf::Vector2i id,sf::RenderWindow *window) : DrawbleObject(window), m_id(id) , m_state(EMPTY)
 {

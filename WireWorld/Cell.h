@@ -7,6 +7,8 @@ class Cell sealed : public DrawbleObject
 {
 	const sf::Vector2i m_id;
 
+	static sf::Vector2i m_ammount;
+
 	static sf::Vector2f m_dimensions;
 
 	short m_state;

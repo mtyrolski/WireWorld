@@ -14,7 +14,7 @@ int main()
 	EventControl cEvent(&window);
 	ViewControl::Init(&window,sf::Vector2f(Loader::dimensions.x*Loader::ammount.x, Loader::dimensions.y*Loader::ammount.y));
 	Cell::Init(Loader::dimensions,Loader::ammount, window.GetPointerToWindow());
-	MouseControl::Init(Loader::dimensions);
+	MouseControl::Init(Loader::dimensions,Loader::ammount);
 
 	while (window.IsOpen())
 	{

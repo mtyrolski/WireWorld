@@ -3,6 +3,7 @@
 const float MouseControl::interval = 0.2f;
 float MouseControl::time_0_click;
 sf::Vector2f MouseControl::dimensions;
+sf::Vector2i MouseControl::ammount;
 
 
 void MouseControl::Control(sf::RenderWindow *window)
@@ -15,15 +16,16 @@ void MouseControl::Control(sf::RenderWindow *window)
 		size_t i = mouseposition.x / dimensions.x;
 		size_t j = mouseposition.y / dimensions.y;
 		
-		if(i+ dimensions.x*j<dimensions.x*dimensions.y) Cell::cells[i + dimensions.x*j].ChangeState();
+		if(i+ ammount.x*j < ammount.x*ammount.y) Cell::cells[i + ammount.x*j].ChangeState();
 
 		time_0_click = clock();
 	}
 
 }
 
-void MouseControl::Init(sf::Vector2f dim)
+void MouseControl::Init(sf::Vector2f dim, sf::Vector2i amm)
 {
 	time_0_click = clock();
 	dimensions = dim;
+	ammount = amm;
 }
