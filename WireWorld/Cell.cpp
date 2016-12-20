@@ -130,6 +130,14 @@ void Cell::ChangeState()
 	updateTexture();
 }
 
+void Cell::Clear()
+{
+	m_state = Cell::EMPTY;
+	nextValue = Cell::EMPTY;
+
+	updateTexture();
+}
+
 
 short Cell::GetState()
 {

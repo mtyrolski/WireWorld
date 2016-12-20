@@ -31,6 +31,8 @@ public:
 	short GetState();
 	void ChangeState();
 
+	void Clear();
+
 	void PrepareUpdate();
 	void ConfirmUpdate();
 
