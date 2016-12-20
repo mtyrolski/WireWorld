@@ -47,10 +47,7 @@ void EventControl::checkEvent(sf::Event *event)
 				}
 				else if (event->key.code == sf::Keyboard::C) //set all cells as empty and stop the game
 				{
-					GameControl::Stop();
-
-					for(auto &var : Cell::cells)
-						var.SetState(Cell::EMPTY);
+					GameControl::Clear();
 				}
 				break;
 			}

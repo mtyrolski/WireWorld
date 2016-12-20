@@ -19,6 +19,9 @@ class Cell sealed : public DrawbleObject
 
 	size_t computeNeighborHeads();
 
+	int nextValue;
+
+	
 public:
 	Cell(sf::Vector2i id, sf::RenderWindow *window);
 
@@ -26,7 +29,8 @@ public:
 	short GetState();
 	void ChangeState();
 
-	void Update();
+	void PrepareUpdate();
+	void ConfirmUpdate();
 
 	static void Init(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window);
 

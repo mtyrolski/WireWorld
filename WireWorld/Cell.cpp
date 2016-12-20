@@ -48,8 +48,8 @@ void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderW
 
 size_t Cell::computeNeighborHeads()
 {
-	int ammount =
-		//j-1
+	return 
+			//j-1
 			((Cell::cells[m_id.x - 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			(Cell::cells[m_id.x + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
@@ -61,7 +61,39 @@ size_t Cell::computeNeighborHeads()
 			(Cell::cells[m_id.x + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
 			(Cell::cells[m_id.x + 1 + m_ammount.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
 
-	return ammount;
+}
+
+void Cell::ConfirmUpdate()
+{
+	m_state = nextValue;
+	updateTexture();
+}
+
+void Cell::PrepareUpdate()
+{
+	switch (m_state)
+	{
+	case EMPTY:	break;
+
+	case HEAD:
+	{
+		SetState(Cell::TAIL);
+		break;
+	}
+	case TAIL:
+	{
+		SetState(Cell::GUIDE);
+		break;
+	}
+	case GUIDE:
+	{
+		if (computeNeighborHeads() == 1 || computeNeighborHeads() == 2)
+		{
+			SetState(Cell::HEAD);
+		}
+		break;
+	}
+	}
 }
 
 
@@ -75,46 +107,23 @@ Cell::Cell(sf::Vector2i id,sf::RenderWindow *window) : DrawbleObject(window), m_
 	updateTexture();
 
 	m_shape.setPosition(id.x*m_dimensions.x,id.y*m_dimensions.y);
+
+	nextValue = Cell::EMPTY;
 }
 
 
 void Cell::SetState(short value)
 {
-	m_state = value;
-
-	updateTexture();
+	nextValue = value;
 }
+
+
 
 void Cell::ChangeState()
 {
 	SetState((m_state+1 > Cell::GUIDE ? Cell::HEAD : m_state+1));
-}
-
-void Cell::Update()
-{
-	switch (m_state)
-	{
-		case EMPTY:	break;
-		
-		case HEAD:
-		{
-			SetState(Cell::TAIL);
-			break;
-		}
-		case TAIL:
-		{
-			SetState(Cell::GUIDE);
-			break;
-		}
-		case GUIDE:
-		{
-			if (computeNeighborHeads() == 1 || computeNeighborHeads() == 2)
-			{
-				SetState(Cell::HEAD);
-			}
-			break;
-		}
-	}
+	ConfirmUpdate();
+	updateTexture();
 }
 
 

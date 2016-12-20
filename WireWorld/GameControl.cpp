@@ -1,7 +1,7 @@
 #include "GameControl.h"
 
 bool GameControl::m_run = false;
-float GameControl::frequency = 2.0f;
+float GameControl::frequency = 0.5f;
 float GameControl::time_0_cycle;
 
 
@@ -11,7 +11,8 @@ void GameControl::Control()
 	{
 		for (auto &var : Cell::cells)
 		{
-			var.Update();
+			var.PrepareUpdate();
+			var.ConfirmUpdate();
 		}
 		time_0_cycle = clock();
 	}
@@ -31,9 +32,13 @@ void GameControl::Stop()
 
 void GameControl::Clear()
 {
+	GameControl::Stop();
+
 	for (auto &var : Cell::cells)
 	{
 		var.SetState(Cell::EMPTY);
+		var.PrepareUpdate();
+		var.ConfirmUpdate();
 	}
 }
 
