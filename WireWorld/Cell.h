@@ -9,19 +9,13 @@ class Cell sealed : public DrawbleObject
 
 	static sf::Vector2f m_dimensions;
 
-	static enum
-	{
-		EMPTY = 0,
-		HEAD = 1,
-		TAIL = 2,
-		GUIDE = 3
-	};
-
 	short m_state;
 
 	void updateTexture();
 
 	static void fillVector(sf::Vector2f dimensions,sf::Vector2i ammount, sf::RenderWindow *window);
+
+	size_t computeNeighborHeads();
 
 public:
 	Cell(sf::Vector2i id, sf::RenderWindow *window);
@@ -30,7 +24,17 @@ public:
 	short GetState();
 	void ChangeState();
 
+	void Update();
+
 	static void Init(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderWindow *window);
 
 	static std::vector<Cell> cells;
+
+	static enum
+	{
+		HEAD = 0,
+		TAIL = 1,
+		EMPTY = 2,
+		GUIDE = 3
+	};
 };

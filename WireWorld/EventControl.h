@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "Window.h"
 #include "ViewControl.h"
+#include "GameControl.h"
 
 class EventControl
 {

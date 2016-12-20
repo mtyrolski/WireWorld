@@ -45,6 +45,21 @@ void Cell::fillVector(sf::Vector2f dimensions, sf::Vector2i ammount, sf::RenderW
 	}
 }
 
+size_t Cell::computeNeighborHeads()
+{
+	return	//j-1
+			((Cell::cells[m_id.x - 1 + m_dimensions.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + m_dimensions.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + 1 + m_dimensions.x*(m_id.y - 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			//j	
+			(Cell::cells[m_id.x-1 + m_dimensions.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x+1 + m_dimensions.x*m_id.y].GetState() == Cell::HEAD ? 1 : 0) +
+			//j+1
+			(Cell::cells[m_id.x - 1 + m_dimensions.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + m_dimensions.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0) +
+			(Cell::cells[m_id.x + 1 + m_dimensions.x*(m_id.y + 1)].GetState() == Cell::HEAD ? 1 : 0));
+}
+
 Cell::Cell(sf::Vector2i id,sf::RenderWindow *window) : DrawbleObject(window), m_id(id) , m_state(EMPTY)
 {
 	m_shape.setSize(m_dimensions);
@@ -67,8 +82,36 @@ void Cell::SetState(short value)
 
 void Cell::ChangeState()
 {
-	SetState((m_state+1 > Cell::GUIDE ? Cell::EMPTY : m_state+1));
+	SetState((m_state+1 > Cell::GUIDE ? Cell::HEAD : m_state+1));
 }
+
+void Cell::Update()
+{
+	switch (m_state)
+	{
+		case EMPTY:	break;
+		
+		case HEAD:
+		{
+			SetState(Cell::TAIL);
+			break;
+		}
+		case TAIL:
+		{
+			SetState(Cell::GUIDE);
+			break;
+		}
+		case GUIDE:
+		{
+			if (computeNeighborHeads() == 1 || computeNeighborHeads() == 2)
+			{
+				SetState(Cell::HEAD);
+			}
+			break;
+		}
+	}
+}
+
 
 short Cell::GetState()
 {

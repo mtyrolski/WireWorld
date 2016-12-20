@@ -37,6 +37,21 @@ void EventControl::checkEvent(sf::Event *event)
 				{
 					m_window->Close();
 				}
+				else if (event->key.code == sf::Keyboard::R)//run the game
+				{
+					GameControl::Run();
+				}
+				else if (event->key.code == sf::Keyboard::B) //break the game
+				{
+					GameControl::Stop();
+				}
+				else if (event->key.code == sf::Keyboard::C) //set all cells as empty and stop the game
+				{
+					GameControl::Stop();
+
+					for(auto &var : Cell::cells)
+						var.SetState(Cell::EMPTY);
+				}
 				break;
 			}
 		}

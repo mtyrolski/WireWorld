@@ -4,6 +4,7 @@
 #include "ViewControl.h"
 #include "MouseControl.h"
 #include "Loader.h"
+#include "GameControl.h"
 
 int main()
 {
@@ -18,13 +19,15 @@ int main()
 	while (window.IsOpen())
 	{
 		sf::Event event;
-
 		cEvent.checkEvent(&event);
-		ViewControl::CheckKeyboard();
-		MouseControl::Control(window.GetPointerToWindow());
 
-		window.Refresh();
+		if(GameControl::IsRun()) GameControl::Control();
+		else MouseControl::Control(window.GetPointerToWindow());
+
+		ViewControl::CheckKeyboard();
 		
+
+		window.Refresh();	
 	}
 
 	return 0;
