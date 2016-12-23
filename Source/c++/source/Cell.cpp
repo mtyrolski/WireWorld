@@ -15,12 +15,12 @@ void Cell::updateTexture()
 	}
 	case HEAD:
 	{
-		m_shape.setFillColor(sf::Color::Red);
+		m_shape.setFillColor(sf::Color::Cyan);
 		break;
 	}
 	case TAIL: 
 	{
-		m_shape.setFillColor(sf::Color::Cyan);
+		m_shape.setFillColor(sf::Color::Red);
 		break;
 	}
 	case GUIDE: 
