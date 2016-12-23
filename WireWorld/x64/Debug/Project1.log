@@ -3,13 +3,5 @@
 d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.hpp(49): warning C4091: 'static ': ignored on left of '' when no variable is declared
 d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\window.hpp(26): warning C4091: 'static ': ignored on left of '' when no variable is declared
 d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\viewcontrol.hpp(30): warning C4091: 'static ': ignored on left of '' when no variable is declared
-  Window.cpp
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\cell.hpp(49): warning C4091: 'static ': ignored on left of '' when no variable is declared
-d:\programowanie\c++\bardziej skomplikowane\sztuczna inteligencja\wireworld\wireworld\window.hpp(26): warning C4091: 'static ': ignored on left of '' when no variable is declared
-  FPScontroller.cpp
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  ViewControl.cpp
-  EventControl.cpp
   Project1.vcxproj -> D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\x64\Debug\WireWorld.exe
   Project1.vcxproj -> D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\x64\Debug\WireWorld.pdb (Partial PDB)

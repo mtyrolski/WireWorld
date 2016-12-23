@@ -158,7 +158,7 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 11;
-            this.label7.Text = "2.3 version";
+            this.label7.Text = "2.5 version";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // linkLabel1
