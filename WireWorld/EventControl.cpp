@@ -1,4 +1,4 @@
-#include "EventControl.h"
+#include "EventControl.hpp"
 
 EventControl::EventControl(Window * winPointer)
 {

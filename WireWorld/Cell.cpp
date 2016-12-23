@@ -1,4 +1,4 @@
-#include "Cell.h"
+#include "Cell.hpp"
 
 sf::Vector2i Cell::m_ammount;
 sf::Vector2f Cell::m_dimensions;

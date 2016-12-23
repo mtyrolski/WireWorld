@@ -1,4 +1,4 @@
-#include "GameControl.h"
+#include "GameControl.hpp"
 
 bool GameControl::m_run = false;
 float GameControl::frequency = 0.25f;

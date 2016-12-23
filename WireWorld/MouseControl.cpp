@@ -1,4 +1,4 @@
-#include "MouseControl.h"
+#include "MouseControl.hpp"
 
 const float MouseControl::interval = 0.2f;
 float MouseControl::time_0_click;

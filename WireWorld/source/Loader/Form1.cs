@@ -89,6 +89,7 @@ namespace Loader
            if(checkValueFromTBa()&&checkValueFromTBd())
             {
                 if (TBd1.Text == "" || TBa1.Text == "") MessageBox.Show("You need to fill all textboxes.");
+                else if (TBs.Text == "") MessageBox.Show("Use scroll to enter a value of move speed");
                 else
                 {
                     try

@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cell.cpp" />
+    <ClCompile Include="FPScontroller.cpp" />
     <ClCompile Include="GameControl.cpp" />
     <ClCompile Include="DrawbleObject.cpp" />
     <ClCompile Include="EventControl.cpp" />
@@ -140,14 +141,15 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Cell.h" />
-    <ClInclude Include="GameControl.h" />
-    <ClInclude Include="DrawbleObject.h" />
-    <ClInclude Include="EventControl.h" />
-    <ClInclude Include="Loader.h" />
-    <ClInclude Include="MouseControl.h" />
-    <ClInclude Include="ViewControl.h" />
-    <ClInclude Include="Window.h" />
+    <ClInclude Include="Cell.hpp" />
+    <ClInclude Include="FPScontroller.hpp" />
+    <ClInclude Include="GameControl.hpp" />
+    <ClInclude Include="DrawbleObject.hpp" />
+    <ClInclude Include="EventControl.hpp" />
+    <ClInclude Include="Loader.hpp" />
+    <ClInclude Include="MouseControl.hpp" />
+    <ClInclude Include="ViewControl.hpp" />
+    <ClInclude Include="Window.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

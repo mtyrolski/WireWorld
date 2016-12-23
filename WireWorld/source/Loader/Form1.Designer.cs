@@ -187,10 +187,12 @@
             // 
             this.hScrollBar1.Location = new System.Drawing.Point(160, 189);
             this.hScrollBar1.Maximum = 19;
+            this.hScrollBar1.Minimum = 1;
             this.hScrollBar1.Name = "hScrollBar1";
             this.hScrollBar1.Size = new System.Drawing.Size(100, 17);
             this.hScrollBar1.SmallChange = 0;
             this.hScrollBar1.TabIndex = 14;
+            this.hScrollBar1.Value = 1;
             this.hScrollBar1.Scroll += new System.Windows.Forms.ScrollEventHandler(this.hScrollBar1_Scroll);
             // 
             // label8

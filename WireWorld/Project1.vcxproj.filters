@@ -42,30 +42,36 @@
     <ClCompile Include="GameControl.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FPScontroller.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="DrawbleObject.h">
+    <ClInclude Include="FPScontroller.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Window.h">
+    <ClInclude Include="Cell.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Cell.h">
+    <ClInclude Include="DrawbleObject.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="EventControl.h">
+    <ClInclude Include="EventControl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Loader.h">
+    <ClInclude Include="GameControl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ViewControl.h">
+    <ClInclude Include="Loader.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MouseControl.h">
+    <ClInclude Include="MouseControl.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GameControl.h">
+    <ClInclude Include="ViewControl.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,7 @@
-#include "Loader.h"
+#include "Loader.hpp"
 
 const std::string Loader::path = "source/Loader/data/options.txt";
+float Loader::moveSpeed;
 
  std::string Loader::title;
  sf::Vector2f Loader::dimensions;
