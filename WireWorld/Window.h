@@ -12,13 +12,19 @@ class Window sealed
 	void clear();
 
 public:
-	Window(sf::Vector2f dimensions,std::string title);
+	Window(std::string title);
 	~Window();
 	void Refresh();
 	bool IsOpen();
 	sf::RenderWindow *GetPointerToWindow();
 	void Close();
 	void ViewUpdate(sf::View *view);
+
+	static enum
+	{
+		WIDTH = 600,
+		HEIGHT = 600
+	};
 };
 
 #endif // !Window_h

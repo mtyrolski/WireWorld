@@ -1,6 +1,6 @@
 #include "ViewControl.h"
 
-const float ViewControl::moveValue = 2;
+float ViewControl::moveValue;
 const float ViewControl::zoomValue = 0.9f;
 const float ViewControl::reductionValue = 1.1f;
 
@@ -8,11 +8,12 @@ sf::View ViewControl::m_view;
 Window *ViewControl::m_window;
 
 
-void ViewControl::Init(Window* window, sf::Vector2f windowDimensions)
+void ViewControl::Init(Window* window, sf::Vector2f windowDimensions, float moveSpeed)
 {
 	ViewControl::m_view.setSize(windowDimensions);
 	m_window = window;
 	m_view.setCenter(windowDimensions.x/2, windowDimensions.y/2);
+	ViewControl::moveValue = moveSpeed;
 }
 
 void ViewControl::Zoom(short value)

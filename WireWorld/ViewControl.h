@@ -9,7 +9,7 @@ class ViewControl sealed
 	
 	static sf::View m_view;
 
-	static const float moveValue;
+	static float moveValue;
 	static const float zoomValue;
 	static const float reductionValue;
 
@@ -26,7 +26,7 @@ public:
 		LEFT = 3
 	};
 
-	static void Init(Window* window, sf::Vector2f windowDimensions);
+	static void Init(Window* window, sf::Vector2f windowDimensions, float moveSpeed);
 	
 	static void Zoom(short value);
 

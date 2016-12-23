@@ -10,9 +10,9 @@ int main()
 {
 	Loader::LoadData();
 
-	Window window(sf::Vector2f(Loader::dimensions.x*Loader::ammount.x, Loader::dimensions.y*Loader::ammount.y),Loader::title);
+	Window window(Loader::title);
 	EventControl cEvent(&window);
-	ViewControl::Init(&window,sf::Vector2f(Loader::dimensions.x*Loader::ammount.x, Loader::dimensions.y*Loader::ammount.y));
+	ViewControl::Init(&window,sf::Vector2f(Loader::dimensions.x*Loader::ammount.x, Loader::dimensions.y*Loader::ammount.y),Loader::moveSpeed);
 	Cell::Init(Loader::dimensions,Loader::ammount, window.GetPointerToWindow());
 	MouseControl::Init(Loader::dimensions,Loader::ammount);
 

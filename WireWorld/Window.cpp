@@ -10,9 +10,9 @@ void Window::clear()
 	m_window->clear(sf::Color::Black);
 }
 
-Window::Window(sf::Vector2f dimensions, std::string title)
+Window::Window(std::string title)
 {
-	m_window = new sf::RenderWindow(sf::VideoMode(dimensions.x, dimensions.y), title);
+	m_window = new sf::RenderWindow(sf::VideoMode(Window::WIDTH, Window::HEIGHT), title);
 	m_window->setFramerateLimit(128);
 }
 
