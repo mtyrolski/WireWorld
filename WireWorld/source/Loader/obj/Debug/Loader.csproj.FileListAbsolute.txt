@@ -1,0 +1,9 @@
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\bin\Debug\Loader.exe.config
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\bin\Debug\Loader.exe
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\bin\Debug\Loader.pdb
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\obj\Debug\Loader.csprojResolveAssemblyReference.cache
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\obj\Debug\Loader.Form1.resources
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\obj\Debug\Loader.Properties.Resources.resources
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\obj\Debug\Loader.csproj.GenerateResource.Cache
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\obj\Debug\Loader.exe
+D:\Programowanie\C++\Bardziej skomplikowane\Sztuczna Inteligencja\WireWorld\WireWorld\source\Loader\obj\Debug\Loader.pdb
