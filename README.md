@@ -12,10 +12,14 @@ despite the simplicity of the rules, Wireworld is Turing-complete.
 
 source: https://en.wikipedia.org/wiki/Wireworld
 
----CONTROL---
+# ---CONTROL---
+
 R- Run the game
+
 B- Break(stop the game)
+
 C- Set all cells as empty
+
 
 Click on cell to change the state
 
