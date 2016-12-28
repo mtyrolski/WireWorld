@@ -16,7 +16,7 @@ void MouseControl::Control(sf::RenderWindow *window)
 		size_t i = mouseposition.x / dimensions.x;
 		size_t j = mouseposition.y / dimensions.y;
 		
-		if(i+ ammount.x*j < ammount.x*ammount.y) Cell::cells[i + ammount.x*j].ChangeState();
+		if(isInMap(mouseposition)) Cell::cells[i + ammount.x*j].ChangeState();
 
 		time_0_click = clock();
 	}
@@ -28,4 +28,10 @@ void MouseControl::Init(sf::Vector2f dim, sf::Vector2i amm)
 	time_0_click = clock();
 	dimensions = dim;
 	ammount = amm;
+}
+
+bool MouseControl::isInMap(sf::Vector2f mouseposition)
+{
+	return (mouseposition.x > 0 && mouseposition.x < ammount.x * dimensions.x &&
+		mouseposition.y>0 && mouseposition.y < ammount.y * dimensions.y);
 }

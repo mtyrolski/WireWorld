@@ -1,3 +1,2 @@
--Fix clicking outside the cell field
 -moving fps control
 -delete empty functions from c# files

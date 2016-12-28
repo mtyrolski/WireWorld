@@ -14,4 +14,5 @@ class MouseControl sealed
 public:
 	static void Control(sf::RenderWindow *window);
 	static void Init(sf::Vector2f dim,sf::Vector2i amm);
+	static bool isInMap(sf::Vector2f mouseposition);
 };
