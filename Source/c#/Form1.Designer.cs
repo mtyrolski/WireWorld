@@ -57,7 +57,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "WireWorld";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -159,7 +158,6 @@
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "2.5 version";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // linkLabel1
             // 
