@@ -2,10 +2,14 @@
 
 #include "MV/initializator/Initializator.hpp"
 
+#include "simulator/simulator.hpp"
+
 int main()
 {
 	mv::Initializator::createInstance();
 	mv::Initializator::getInstance().init();
+
+	Simulator::createInstance();
 	
 	//main game loop
 	while (mv::Scene::getInstance().isOpen())

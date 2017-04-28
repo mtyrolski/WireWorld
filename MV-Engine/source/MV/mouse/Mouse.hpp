@@ -11,6 +11,8 @@
 #include "MV/resourceCache/Cache.hpp"
 #include "MV/math/Math.hpp"
 
+#include "Simulator/simulator.hpp"
+
 namespace mv
 {
 	class Mouse : public sf::Drawable, public Ticker

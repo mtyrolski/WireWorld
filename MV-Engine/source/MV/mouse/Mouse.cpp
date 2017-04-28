@@ -115,7 +115,8 @@ namespace mv
 	{
 		positionUpdate();
 		
-		checkClick();
+		if( Simulator::getInstance().getState()==Simulator::state_t::EDITING )
+			checkClick();
 
 		if(movingPermission)
 			checkBorders();

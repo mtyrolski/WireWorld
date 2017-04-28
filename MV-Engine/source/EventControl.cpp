@@ -37,14 +37,14 @@ namespace mv
 
 	EventControl & EventControl::getInstance()
 	{
-		if (instance == 0)
+		if (instance == nullptr)
 			Logger::Log(constants::error::singleton::SINGLETON_NOT_INITED, Logger::STREAM::BOTH, Logger::TYPE::ERROR);
 		return *instance;
 	}
 
 	void EventControl::createInstance(Scene *scene)
 	{
-		if (instance == 0)
+		if (instance == nullptr)
 			instance = new EventControl(scene);
 	}
 }
