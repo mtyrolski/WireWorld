@@ -1,0 +1,2 @@
+Don't remove empty state from states.txt because it is default state. 
+NAME NUMBER  R G B
