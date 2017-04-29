@@ -62,6 +62,8 @@ namespace mv
 		//Checks that object with given position is in map
 		bool isInMap(unsigned int i, unsigned int j);
 
+		Cell& getCell( int i, int j );
+
 		virtual void tick() override;
 	
 	protected:

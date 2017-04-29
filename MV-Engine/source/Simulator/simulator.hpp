@@ -1,5 +1,7 @@
 #pragma once
 
+#include <ctime>
+
 #include "MV/InputManager/InputManager.hpp"
 #include "MV/ticker/Ticker.hpp"
 #include "MV/logger/Logger.hpp"
@@ -22,6 +24,10 @@ private:
 	mv::InputManager inputManager;
 	static Simulator* instance;
 
+	float frequency;
+
+	float lastTimePoint;
+
 	/* ===Methods=== */
 public:
 
@@ -32,10 +38,13 @@ public:
 	static Simulator& getInstance();
 	static void createInstance();
 
+	void controlCells();
 	void tick() override;
 
 	void runSimulation();
 	void stopSimulation();
+
+	void setFrequency(float value);
 
 protected:
 private:

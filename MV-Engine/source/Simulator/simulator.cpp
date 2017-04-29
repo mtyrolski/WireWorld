@@ -2,7 +2,6 @@
 
 Simulator* Simulator::instance;
 
-
 Simulator::state_t Simulator::getState()
 {
 	return state;
@@ -26,11 +25,22 @@ void Simulator::createInstance()
 		instance = new Simulator();
 }
 
+void Simulator::controlCells()
+{
+	if ( (clock() - lastTimePoint) / CLOCKS_PER_SEC > frequency )
+	{
+		for ( auto &var : *mv::MapManager::getInstance().getCellStorage() )
+			var.computeState();
+
+		lastTimePoint = clock();
+	}
+}
+
 void Simulator::tick()
 {
 	if( state==state_t::SIMULATION )
 	{
-		//modifyCells();
+		controlCells();
 	}
 }
 
@@ -44,8 +54,13 @@ void Simulator::stopSimulation()
 	state = state_t::EDITING;
 }
 
+void Simulator::setFrequency(float value)
+{
+	frequency = value;
+}
+
 Simulator::Simulator()
-	:Ticker(this),state(state_t::EDITING)
+	:Ticker(this),state(state_t::EDITING), lastTimePoint(clock()),frequency(mv::constants::simulator::FREQUENCY)
 {
 	inputManager.addKeyToCheck( sf::Keyboard::R, []() { Simulator::getInstance().runSimulation(); } );
 	inputManager.addKeyToCheck( sf::Keyboard::B, []() { Simulator::getInstance().stopSimulation(); } );

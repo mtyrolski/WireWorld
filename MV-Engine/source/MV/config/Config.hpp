@@ -29,6 +29,11 @@ namespace mv
 		{
 			constexpr auto FREQUENCY = 0.2f;
 		}
+
+		namespace simulator
+		{
+			constexpr auto FREQUENCY = 0.5f;
+		}
 		
 		namespace error
 		{

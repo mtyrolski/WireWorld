@@ -110,6 +110,11 @@ namespace mv
 			j >= 0 && j < unitWorldSize.y;
 	}
 
+	Cell& MapManager::getCell(int i, int j)
+	{
+		return map[i+j*unitWorldSize.x];
+	}
+
 	void MapManager::tick()
 	{
 		updateCells();

@@ -11,6 +11,7 @@
 #include "MV/config/Config.hpp"
 #include "MV/stateSystem/StateSystem.hpp"
 
+class MapManager;
 namespace mv
 {
 	class Cell : public sf::Drawable
@@ -32,6 +33,14 @@ namespace mv
 		const sf::Vector2i unitPosition;
 
 		float lastClickTime;
+
+		static enum state_t
+		{
+			EMPTY = 0,
+			GUIDE = 1,
+			TAIL = 2,
+			HEAD = 3
+		};
 
 		/* ===Methods=== */
 	public:
@@ -64,6 +73,9 @@ namespace mv
 		//Sets outline color of cell
 		void setOutlineColor(const sf::Color& color);
 
+		//Computes states based on ammount of neighbours
+		void computeState();
+
 	protected:
 	private:
 		virtual void draw(sf::RenderTarget& target, sf::RenderStates states) const;
@@ -75,5 +87,7 @@ namespace mv
 		void setBasicParameters(const std::string& name, sf::Vector2f& cellDimensions, sf::Vector2i& uPos);
 
 		void setVisualSettings(sf::Vector2f& cellDimensions, sf::Vector2i& uPos);
+
+		int computeNeighborHeads();
 	};
 }
