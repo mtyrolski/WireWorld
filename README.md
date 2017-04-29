@@ -1,7 +1,7 @@
 # WireWorld
-WireWorld engine
-
-***VERSION 2.5***
+## WireWorld engine
+In the past, it was normal project, today it is example of use of MV-Engine
+(https://github.com/mvxxx/MV-Engine)
 
 [wiki]
 Wireworld is a cellular automaton first proposed by Brian Silverman in 1987,
@@ -20,7 +20,4 @@ B- Break(stop the game)
 
 C- Set all cells as empty
 
-
 Click on cell to change the state
-
-If you want to change options, you need to run game from Loader.exe
