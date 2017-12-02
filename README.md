@@ -1,5 +1,5 @@
 # WireWorld
-### In the past, it was normal project, today it is example of use of MV-Engine
+### In the past, it was normal project, today it is example of use of MV-Engine (version 1.1)
 (https://github.com/mvxxx/MV-Engine)
 
 [wiki]
